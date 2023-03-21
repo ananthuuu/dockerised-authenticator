@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    volumes:
+      - ./app:/app
+    environment:
+      - CHROMEDRIVER_PATH=/usr/local/bin/chromedriver
+      - GOOGLE_CHROME_BIN=/usr/bin/google-chrome-stable
+    ports:
+      - "5000:5000"
+
+
+  # shell:
+  #     build: .
+  #     volumes:
+  #       - ./app:/app
+  #     environment:
+  #       - CHROMEDRIVER_PATH=/usr/local/bin/chromedriver
+  #       - GOOGLE_CHROME_BIN=/usr/bin/google-chrome-stable
+  #     command: sh
+  #     stdin_open: true
+  #     tty: true
